@@ -17,6 +17,7 @@ antigen bundle tmux
 antigen bundle git
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle command-not-found
 
 # Bundles from other repo.
 antigen bundle zsh-users/zsh-syntax-highlighting
