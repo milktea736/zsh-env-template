@@ -39,13 +39,3 @@ function git_stash_save {
 function docker_rn() {
     docker rmi $1 $(docker images --filter "dangling=true" -q --no-trunc)
 }
-
-function upload() {
-    source_dir="/Users/Ivan/Cathay/project/micro-cluster"
-
-    if [ "$1" = "--del" ]; then
-        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' --delete ${source_dir} ubuntu@aws-test:/data/
-    else
-        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' ${source_dir} ubuntu@aws-test:/data/
-    fi
-}
