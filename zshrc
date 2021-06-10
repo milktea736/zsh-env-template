@@ -1,4 +1,4 @@
-BASEDIR=$(dirname "$0")
+BASEDIR=$(cd $(dirname "$0") && pwd)
 
 # Load custom host env
 source $BASEDIR/host-env.sh
@@ -27,7 +27,9 @@ antigen bundle zsh-users/zsh-history-substring-search
 
 
 # Load the theme.
-antigen theme robbyrussell
+# antigen theme robbyrussell
+
+antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
