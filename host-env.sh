@@ -5,7 +5,7 @@ BASEDIR=$(cd $(dirname "$0") && pwd)
 export LC_ALL=zh_TW.UTF-8
 
 ### === Concate custom PATH ===
-export PATH=$PATH:$BASEDIR/$BASEDIR/bat/bin
+export PATH=$PATH:$BASEDIR/bat/bin
 
 ### === Aliases ===
 alias py="python"
