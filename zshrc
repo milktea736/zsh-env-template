@@ -1,10 +1,13 @@
 BASEDIR=$(cd $(dirname "$0") && pwd)
 
+# Load mac client env
+source "$BASEDIR/mac-env.sh"
+
 # Load custom host env
-source $BASEDIR/host-env.sh
+source "$BASEDIR/host-env.sh"
 
 # Init antigen
-source $BASEDIR/antigen.zsh
+source "$BASEDIR/antigen.zsh"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh

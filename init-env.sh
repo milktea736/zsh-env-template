@@ -42,7 +42,7 @@ function linux_install() {
     echo "cp $BASEDIR/tmux.conf/.tmux.conf.local ~/.tmux.conf.local"
 }
 
-function install_requires(){
+function install_requires() {
     common_install
 
     os=$(uname -s)
