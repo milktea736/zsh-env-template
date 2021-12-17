@@ -16,6 +16,6 @@
   * This script will Install requirements (`pyenv`, `antigen` and `autojump`)
     * [Fulfils pyenv suggested build environment](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) if you are using Linux
 
-* add `source $PATH_TO_ZSH_ENV_TEMPLATE/zshrc` to the top of `~/.zshrc`
+* add `source $PATH_TO_ZSH_ENV_TEMPLATE/zshenv` to the top of `~/.zshrc`
 
 * Set zsh as your default shell. `sudo chsh -s $(which zsh) $USER`

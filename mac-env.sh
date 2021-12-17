@@ -34,9 +34,9 @@ function upload() {
     source_dir="/Users/Ivan/Cathay/project/micro-cluster"
 
     if [ "$1" = "--del" ]; then
-        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' --delete ${source_dir} ubuntu@ec2-u18:/data/
+        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' --delete ${source_dir} ubuntu@aws-u18:/data/
     else
-        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' ${source_dir} ubuntu@ec2-u18:/data/
+        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' ${source_dir} ubuntu@aws-u18:/data/
     fi
 }
 
@@ -44,9 +44,9 @@ function upload_stable() {
     source_dir="/Users/ivan/Cathay/project/stable"
 
     if [ "$1" = "--del" ]; then
-        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' --delete ${source_dir} ubuntu@ec2-u18:/data/
+        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' --delete ${source_dir} ubuntu@aws-u18:/data/
     else
-        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' ${source_dir} ubuntu@ec2-u18:/data/
+        rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' ${source_dir} ubuntu@aws-u18:/data/
     fi
 }
 
