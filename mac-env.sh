@@ -4,6 +4,12 @@ export KUBECONFIG=/Users/ivan/Cathay/project/deploy-okd/setup-dir/auth/kubeconfi
 export OC_CLI=/Users/ivan/Cathay/project/deploy-okd/client
 export PATH=$PATH:$KUBECONFIG:$OC_CLI
 
+### === load code-gist bins ===
+GIST_BIN_DIR=/Users/ivan/code-gists/bin
+
+bin_path=$(find $GIST_BIN_DIR -type d | tr '\n' ':')
+export PATH=$PATH:$bin_path
+
 ### === init thefuck ===
 eval "$(thefuck --alias wtf)"
 
@@ -16,6 +22,7 @@ export NVM_DIR="$HOME/.nvm"
 alias ec2-u18="ssh -i ~/.ssh/lab_ivan.pem ubuntu@aws-u18"
 alias ec2-ivan-u18="ssh -i ~/.ssh/lab_ivan.pem ivan@aws-u18"
 alias ec2-u20="ssh -i ~/.ssh/lab_ivan.pem ubuntu@aws-u20"
+alias ec2-graph="ssh -i ~/.ssh/micro-cluster-workshop.pem ubuntu@auto-graph"
 
 ### === lazy functions ===
 function workwork() {
