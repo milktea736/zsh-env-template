@@ -28,7 +28,7 @@ function linux_install() {
     $BASEDIR/fzf/install
 
     # install autojump
-    git clone git://github.com/wting/autojump.git $BASEDIR/autojump
+    git clone https://github.com/wting/autojump.git $BASEDIR/autojump
     cd $BASEDIR/autojump
     python3 ./install.py
 

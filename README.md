@@ -8,9 +8,7 @@
   * `$ sudo locale-gen zh_TW.UTF-8`
   * `$ sudo apt-get update`
   * `$ sudo apt-get install -y zsh python-is-python3 thefuck tree bat`
-
-* Create a `.zshrc` file at home directory
-  * `$ touch ~/.zshrc`
+  * `install zplug` 
 
 * Execute install script. `$ ./zsh-env-template/init-env.sh`
   * This script will Install requirements (`pyenv`, `antigen` and `autojump`)
