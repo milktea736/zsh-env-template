@@ -1,6 +1,9 @@
 #!/bin/bash
 BASEDIR=$(cd $(dirname "$0") && pwd)
 
+### === export gpg ===
+export GPG_TTY=$(tty)
+
 export LC_ALL=zh_TW.UTF-8
 export PATH="$PATH:$BASEDIR/$BASEDIR/bat/bin"
 
