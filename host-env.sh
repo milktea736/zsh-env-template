@@ -5,7 +5,7 @@ BASEDIR=$(cd $(dirname "$0") && pwd)
 export GPG_TTY=$(tty)
 
 export LC_ALL=zh_TW.UTF-8
-export PATH="$PATH:$BASEDIR/$BASEDIR/bat/bin"
+export PATH="$PATH:$BASEDIR/bat/bin:$HOME/.local/bin"
 
 ### === aliases ===
 alias py="python"

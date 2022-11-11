@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export KUBECONFIG=/Users/ivan/Cathay/project/deploy-okd/setup-dir/auth/kubeconfig
-export OC_CLI=/Users/ivan/Cathay/project/deploy-okd/client
+export KUBECONFIG=$HOME/Cathay/project/deploy-okd/csc/auth/kubeconfig
+export OC_CLI=$HOME/Cathay/project/deploy-okd/client
 export PATH=$PATH:$KUBECONFIG:$OC_CLI
 
 ### === load code-gist bins ===
-GIST_BIN_DIR=/Users/ivan/code-gists/bin
+GIST_BIN_DIR=$HOME/code-gists/bin
 
 bin_path=$(find $GIST_BIN_DIR -type d | tr '\n' ':')
 export PATH=$PATH:$bin_path
@@ -26,19 +26,19 @@ alias ec2-graph="ssh -i ~/.ssh/micro-cluster-workshop.pem ubuntu@auto-graph"
 
 ### === lazy functions ===
 function workwork() {
-    (cd /Users/ivan/Cathay/playground/aws-scripts && pipenv run python manage-instance.py start $1)
+    (cd $HOME/Cathay/playground/aws-scripts && pipenv run python manage-instance.py start $1)
 }
 
 function byebye() {
-    (cd /Users/ivan/Cathay/playground/aws-scripts && pipenv run python manage-instance.py stop $1)
+    (cd $HOME/Cathay/playground/aws-scripts && pipenv run python manage-instance.py stop $1)
 }
 
 function state() {
-    (cd /Users/ivan/Cathay/playground/aws-scripts && pipenv run python manage-instance.py state $1)
+    (cd $HOME/Cathay/playground/aws-scripts && pipenv run python manage-instance.py state $1)
 }
 
 function upload() {
-    source_dir="/Users/Ivan/Cathay/project/micro-cluster"
+    source_dir="$HOME/Cathay/project/micro-cluster"
 
     if [ "$1" = "--del" ]; then
         rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' --delete ${source_dir} ubuntu@aws-u18:/data/
@@ -48,7 +48,7 @@ function upload() {
 }
 
 function upload_stable() {
-    source_dir="/Users/ivan/Cathay/project/stable"
+    source_dir="$HOME/Cathay/project/stable"
 
     if [ "$1" = "--del" ]; then
         rsync -rave "ssh -i ~/.ssh/lab_ivan.pem" --exclude venv --exclude '*.pyc' --delete ${source_dir} ubuntu@aws-u18:/data/
@@ -59,7 +59,7 @@ function upload_stable() {
 
 function checkin() {
     (
-        cd /Users/ivan/Cathay/playground/clockon
+        cd $HOME/Cathay/playground/clockon
         create_environment_json
         newman run checkin.postman_collection.json --environment environment.json
         rm environment.json
@@ -68,7 +68,7 @@ function checkin() {
 
 function checkout() {
     (
-        cd /Users/ivan/Cathay/playground/clockon
+        cd $HOME/Cathay/playground/clockon
         create_environment_json
         newman run checkout.postman_collection.json --environment environment.json
         rm environment.json
@@ -85,7 +85,7 @@ function create_environment_json() {
 }
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ivan/Cathay/project/gcp-demo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivan/Cathay/project/gcp-demo/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/Cathay/project/gcp-demo/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/Cathay/project/gcp-demo/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/ivan/Cathay/project/gcp-demo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivan/Cathay/project/gcp-demo/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/Cathay/project/gcp-demo/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Cathay/project/gcp-demo/google-cloud-sdk/completion.zsh.inc'; fi
