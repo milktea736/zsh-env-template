@@ -1,6 +1,10 @@
 #!/bin/bash
 BASEDIR=$(cd $(dirname "$0") && pwd)
 
+# unlimit zsh history size
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+
 ### === export gpg ===
 export GPG_TTY=$(tty)
 
