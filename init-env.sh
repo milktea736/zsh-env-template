@@ -2,8 +2,9 @@
 BASEDIR=$(cd $(dirname "$0") && pwd)
 
 function common_install() {
-    # download antigen
-    curl -L git.io/antigen > $BASEDIR/antigen.zsh
+    # install zplug
+    export ZPLUG_HOME=$BASEDIR/.zplug
+    git clone https://github.com/zplug/zplug $ZPLUG_HOME
 }
 
 function mac_install() {
