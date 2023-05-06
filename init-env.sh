@@ -17,23 +17,16 @@ function mac_install() {
 }
 
 function linux_install() {
-    # download pyenv
-    git clone https://github.com/pyenv/pyenv.git $BASEDIR/pyenv
+    sudo apt install -y fzf tree bat jq zsh tmux
 
     # create soft link for bat
     mkdir -p $BASEDIR/bat/bin
     ln -s $(which batcat) $BASEDIR/bat/bin/bat
 
-    # install fzf
-    git clone --depth 1 https://github.com/junegunn/fzf.git $BASEDIR/fzf
-    $BASEDIR/fzf/install
-
-    # install autojump
-    git clone https://github.com/wting/autojump.git $BASEDIR/autojump
-    cd $BASEDIR/autojump
-    python3 ./install.py
-
     echo "=== please add the lines above to the top of cd $BASEDIR/zshrc ==="
+
+    # install asdf
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 
     # install tmux.conf
     git clone https://github.com/gpakosz/.tmux.git $BASEDIR/tmux.conf

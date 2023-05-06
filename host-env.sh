@@ -32,11 +32,6 @@ export PATH="$PATH:$BASEDIR/bat/bin:$HOME/.local/bin"
 alias py="python"
 alias pfc="fzf | xargs code"
 
-### === init pyenv ===
-export PYENV_ROOT="$BASEDIR/pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 ### === custom functions ===
 function pip() {
     if [[ $1 == "search" ]]; then
