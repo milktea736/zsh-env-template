@@ -17,14 +17,20 @@ export PATH=$PATH:$GOBIN
 ### === export gpg ===
 export GPG_TTY=$(tty)
 
+### === export fzf configs ===
+export FZF_DEFAULT_OPTS="--preview-window 'right:57%' --preview 'bat --color always --style=numbers --line-range :300 {}' \
+--bind 'ctrl-y:preview-up,ctrl-e:preview-down,\
+ctrl-b:preview-page-up,ctrl-f:preview-page-down,\
+ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,\
+shift-up:preview-top,shift-down:preview-bottom,\
+alt-up:half-page-up,alt-down:half-page-down'"
+
 export LC_ALL=zh_TW.UTF-8
 export PATH="$PATH:$BASEDIR/bat/bin:$HOME/.local/bin"
 
 ### === aliases ===
 alias py="python"
-alias pf="fzf --preview 'bat --color \"always\" {}'"
-alias pfc="fzf --preview 'bat --color \"always\" {}' | xargs code"
-alias prettyjson="python -m json.tool"
+alias pfc="fzf | xargs code"
 
 ### === init pyenv ===
 export PYENV_ROOT="$BASEDIR/pyenv"
